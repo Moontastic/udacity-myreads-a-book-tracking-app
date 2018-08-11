@@ -14,7 +14,7 @@ class BookShelf extends Component {
                                 <div className="book-top">
                                     <div className="book-cover" style={{ width: 128, height: 170, backgroundImage: book.imageLinks ? (`url(${book.imageLinks.thumbnail})`) : (`url(https://dummyimage.com/128x170/4f4f4f/ffffff.jpg&text=No+Book+Art)`) }}></div>
                                     <div className="book-shelf-changer">
-                                        <select value={book.shelf} onChange={(event) => this.props.updateShelf(book, event.target.value)}> 
+                                        <select value = {this.props.bookState?this.props.bookState.shelf:'none'} onChange={(event) => this.props.updateShelf(book, event.target.value)}> 
                                             <option disabled>Move to...</option>
                                             <option value="currentlyReading">Currently Reading</option>
                                             <option value="wantToRead">Want to Read</option>
